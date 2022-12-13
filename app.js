@@ -1,16 +1,11 @@
 import express from 'express';
+import path from "path";
 
 const app = express();
 
-app.get('/', (req, res) => {
+// Middlewares
+app.use(express.static('public'));
 
-  const photo = {
-    id: 1,
-    name: "Photo Name",
-    description: "Photo Description"
-  }
-  res.send(photo);
-});
 
 const port = 3000;
 app.listen(port, () => {

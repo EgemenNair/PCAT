@@ -5,12 +5,8 @@
   "description": "PCAT Photo App",
   "main": "app.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> a26559b (Workspace created.)
   },
   "repository": {
     "type": "git",
@@ -28,14 +24,10 @@
   },
   "homepage": "https://github.com/EgemenNair/PCAT#readme",
   "devDependencies": {
-<<<<<<< HEAD
     "nodemon": "^2.0.20",
     "prettier": "2.8.1"
   },
   "dependencies": {
     "express": "^4.18.2"
-=======
-    "prettier": "2.8.1"
->>>>>>> a26559b (Workspace created.)
   }
 }
