@@ -1,13 +1,16 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const express = require('express');
+const mongoose = require('mongoose');
 
-import express from 'express';
-import ejs from 'ejs';
-import path from 'path';
+const ejs = require('ejs');
+const path = require('path');
+
+const Photo = require('./models/Photo');
 
 const app = express();
+
+// Connect to DB
+mongoose.set('strictQuery', false);
+mongoose.connect('mongodb://localhost/pcat');
 
 // Template Engine
 app.set('view engine', 'ejs');
@@ -18,8 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('/+(index.html)?', async (req, res) => {
+  const photos = await Photo.find({});
+  res.render('index', {
+    photos,
+  });
 });
 app.get('/about', (req, res) => {
   res.render('about');
@@ -27,10 +33,13 @@ app.get('/about', (req, res) => {
 app.get('/add', (req, res) => {
   res.render('add');
 });
+app.get('/photo-page.html', (req, res) => {
+  res.render('photo-page');
+});
 
-app.post('/photos', (req, res) => {
-  console.log(req.body);
-  res.redirect('/')
+app.post('/photos', async (req, res) => {
+  await Photo.create(req.body);
+  res.redirect('/');
 });
 
 const port = 3000;

@@ -1,6 +1,6 @@
 {
   "name": "pcat",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "PCAT Photo App",
   "main": "app.js",
