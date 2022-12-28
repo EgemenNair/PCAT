@@ -7,7 +7,7 @@
                 <div class="container-fluid position-relative">
                     <div class="row">
                         <div class="col-7 col-md-4">
-                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
+                            <a href="/" class="tm-bg-black text-center tm-logo-container">
                                 <i class="fas fa-video tm-site-logo mb-3"></i>
                                 <h1 class="tm-site-name">PCAT</h1>
                             </a>
@@ -53,8 +53,8 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                             <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-01.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="photo-page.html" class="position-absolute tm-img-overlay">
+                                <img class="img-fluid mx-auto d-block " src="<%= photos[i].image %>" height="200" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="/photos/<%= photos[i]._id %>" class="position-absolute tm-img-overlay">
                                 </a>
                             </div>    
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
@@ -80,8 +80,8 @@
                 <%- include('partials/_footer.ejs') -%>
     </div> <!-- .tm-page-wrap -->
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script>
         function setVideoSize() {
             const vidWidth = 1920;
